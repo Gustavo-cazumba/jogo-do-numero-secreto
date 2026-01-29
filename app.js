@@ -29,7 +29,8 @@ function verificarChute() {
         let mensagemTentativas = `Você acertou o número secreto com ${tentativas} ${palavraTentativas}`;
 
         exibirTextoNaTela('p', mensagemTentativas);
-        document.getElementById('reiniciar').removeAttribute('disabled'); 
+        document.getElementById('reiniciar').removeAttribute('disabled');
+        document.getElementsById('chutar').setAttribute('disabled', true);
     }else {
         if(chute > numeroSecreto){
             exibirTextoNaTela('p','O numero é menor');
@@ -69,4 +70,5 @@ function reiniciarJogo() {
     tentativas = 1;
     exibirMensagemInicial();
     document.getElementById('reiniciar').setAttribute('disabled', true);
+    document.getElementById('chutar').removeAttribute('disabled');
 }
